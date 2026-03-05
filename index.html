@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Oil & Gas Engineer in the AI Era | PLURAEX</title>
+  <meta name="description" content="A strategic guide for Oil & Gas engineers, technicians and specialists who want to lead the digital transformation and accelerate their careers with AI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-mid: #0F2040;
+      --navy-light: #1A3560;
+      --cyan: #00D4FF;
+      --cyan-dark: #0099CC;
+      --white: #FFFFFF;
+      --gray-light: #F0F4F8;
+      --gray-text: #64748B;
+      --accent: #FF6B35;
+      --gradient: linear-gradient(135deg, #00D4FF 0%, #0099CC 100%);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--navy); line-height: 1.6; }
+
+    header { background: var(--white); border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; padding: 16px 0; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 900; color: var(--navy); letter-spacing: 2px; text-decoration: none; }
+    .logo span { color: var(--cyan-dark); }
+    nav { display: flex; gap: 28px; align-items: center; }
+    nav a { color: var(--gray-text); text-decoration: none; font-weight: 500; font-size: 14px; transition: color 0.2s; }
+    nav a:hover { color: var(--cyan-dark); }
+    .btn-nav { background: var(--navy); color: var(--white) !important; padding: 10px 20px; border-radius: 6px; font-weight: 600 !important; transition: background 0.2s !important; }
+    .btn-nav:hover { background: var(--navy-light) !important; }
+
+    .hero { background: var(--navy); padding: 90px 0 80px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 60% 50%, rgba(0,212,255,0.10) 0%, transparent 65%); pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .hero-badge { display: inline-block; background: rgba(0,212,255,0.15); border: 1px solid rgba(0,212,255,0.4); color: var(--cyan); font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 4vw, 48px); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+    .hero h1 span { color: var(--cyan); }
+    .hero-subtitle { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 32px; max-width: 480px; }
+    .hero-cta-group { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-block; background: var(--cyan); color: var(--navy); font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 16px; padding: 16px 32px; border-radius: 8px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(0,212,255,0.35); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,212,255,0.5); }
+    .hero-price-tag { font-size: 15px; color: rgba(255,255,255,0.6); }
+    .hero-price-tag strong { color: var(--white); font-size: 22px; font-weight: 700; }
+    .hero-image-wrap { display: flex; justify-content: center; align-items: center; }
+    .hero-book { width: 260px; border-radius: 12px; box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,212,255,0.2); transform: perspective(800px) rotateY(-8deg); transition: transform 0.4s; }
+    .hero-book:hover { transform: perspective(800px) rotateY(0deg); }
+    .hero-stats { display: flex; gap: 32px; margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .stat { text-align: center; }
+    .stat-number { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 900; color: var(--cyan); }
+    .stat-label { font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+
+    .problem-section { background: var(--gray-light); padding: 80px 0; }
+    .section-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--cyan-dark); margin-bottom: 12px; }
+    .section-title { font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 3vw, 38px); font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+    .section-title span { color: var(--cyan-dark); }
+    .section-subtitle { font-size: 17px; color: var(--gray-text); max-width: 600px; line-height: 1.7; margin-bottom: 48px; }
+    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .problem-card { background: var(--white); border-radius: 12px; padding: 28px; border-left: 4px solid #ff4444; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .problem-icon { font-size: 28px; margin-bottom: 12px; }
+    .problem-card h3 { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .problem-card p { font-size: 14px; color: var(--gray-text); line-height: 1.6; }
+
+    .solution-section { padding: 80px 0; background: var(--white); }
+    .solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .solution-list { list-style: none; margin-top: 28px; }
+    .solution-list li { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #e2e8f0; font-size: 15px; color: #2a3a4a; line-height: 1.5; }
+    .solution-list li:last-child { border-bottom: none; }
+    .check-icon { width: 22px; height: 22px; background: var(--cyan); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; font-size: 12px; color: var(--navy); font-weight: 800; }
+    .solution-visual { background: var(--navy); border-radius: 16px; padding: 36px; text-align: center; }
+    .solution-visual-title { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--cyan); margin-bottom: 24px; }
+    .transformation-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 16px; }
+    .transform-from { background: rgba(255,68,68,0.15); border: 1px solid rgba(255,68,68,0.3); color: #ff8888; padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 500; flex: 1; text-align: center; }
+    .transform-arrow { color: var(--cyan); font-size: 18px; font-weight: 700; }
+    .transform-to { background: rgba(0,212,255,0.12); border: 1px solid rgba(0,212,255,0.3); color: var(--cyan); padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; flex: 1; text-align: center; }
+
+    .chapters-section { background: var(--navy); padding: 80px 0; }
+    .chapters-section .section-title { color: var(--white); }
+    .chapters-section .section-label { color: var(--cyan); }
+    .chapters-section .section-subtitle { color: rgba(255,255,255,0.6); }
+    .chapters-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .chapter-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; transition: border-color 0.2s, background 0.2s; }
+    .chapter-card:hover { border-color: rgba(0,212,255,0.4); background: rgba(0,212,255,0.06); }
+    .chapter-num { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 2px; color: var(--cyan); text-transform: uppercase; margin-bottom: 10px; }
+    .chapter-card h3 { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 8px; line-height: 1.3; }
+    .chapter-card p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+    .author-section { background: var(--gray-light); padding: 80px 0; }
+    .author-grid { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center; }
+    .author-avatar { width: 160px; height: 160px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 48px; font-weight: 900; color: var(--cyan); border: 4px solid var(--cyan); flex-shrink: 0; }
+    .author-name { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 900; color: var(--navy); margin-bottom: 6px; }
+    .author-title { font-size: 14px; color: var(--cyan-dark); font-weight: 600; margin-bottom: 16px; }
+    .author-bio { font-size: 15px; color: var(--gray-text); line-height: 1.75; margin-bottom: 20px; }
+    .author-credentials { display: flex; gap: 12px; flex-wrap: wrap; }
+    .credential-tag { background: var(--white); border: 1px solid #e2e8f0; border-radius: 20px; padding: 6px 14px; font-size: 13px; font-weight: 500; color: var(--navy); }
+
+    .quote-section { background: var(--navy); padding: 60px 0; text-align: center; }
+    .quote-text { font-family: 'Montserrat', sans-serif; font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; color: var(--white); line-height: 1.4; max-width: 800px; margin: 0 auto 16px; }
+    .quote-text span { color: var(--cyan); }
+    .quote-author { font-size: 14px; color: rgba(255,255,255,0.5); }
+
+    .cta-section { background: var(--white); padding: 80px 0; }
+    .cta-box { background: var(--navy); border-radius: 20px; padding: 60px; text-align: center; position: relative; overflow: hidden; }
+    .cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 50% 0%, rgba(0,212,255,0.12) 0%, transparent 60%); pointer-events: none; }
+    .cta-box h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 900; color: var(--white); margin-bottom: 16px; position: relative; }
+    .cta-box h2 span { color: var(--cyan); }
+    .cta-box p { font-size: 16px; color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto 36px; line-height: 1.7; position: relative; }
+    .cta-price-block { margin-bottom: 28px; position: relative; }
+    .cta-price-label { font-size: 13px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
+    .cta-price { font-family: 'Montserrat', sans-serif; font-size: 52px; font-weight: 900; color: var(--white); line-height: 1; }
+    .cta-price sup { font-size: 22px; vertical-align: super; color: var(--cyan); }
+    .cta-price-sub { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+    .btn-cta { display: inline-block; background: var(--cyan); color: var(--navy); font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 18px; padding: 20px 48px; border-radius: 10px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 6px 30px rgba(0,212,255,0.4); position: relative; }
+    .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,212,255,0.55); }
+    .cta-guarantee { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.4); position: relative; }
+
+    .faq-section { background: var(--gray-light); padding: 80px 0; }
+    .faq-list { max-width: 720px; margin: 0 auto; }
+    .faq-item { background: var(--white); border-radius: 10px; margin-bottom: 12px; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
+    .faq-question { padding: 20px 24px; font-weight: 600; font-size: 15px; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; }
+    .faq-question:hover { color: var(--cyan-dark); }
+    .faq-icon { font-size: 20px; color: var(--cyan-dark); font-weight: 300; transition: transform 0.3s; flex-shrink: 0; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; padding: 0 24px; font-size: 14px; color: var(--gray-text); line-height: 1.7; }
+    .faq-item.open .faq-answer { max-height: 200px; padding: 0 24px 20px; }
+
+    footer { background: var(--navy); padding: 40px 0; text-align: center; }
+    .footer-logo { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 900; color: var(--white); letter-spacing: 2px; margin-bottom: 8px; }
+    .footer-logo span { color: var(--cyan); }
+    .footer-text { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--cyan); }
+
+    @media (max-width: 768px) {
+      .hero-grid, .solution-grid, .author-grid { grid-template-columns: 1fr; }
+      .hero-image-wrap { display: none; }
+      .problem-grid, .chapters-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 20px; }
+      .cta-box { padding: 40px 24px; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="#" class="logo">PLURA<span>EX</span></a>
+      <nav>
+        <a href="#content">Content</a>
+        <a href="#author">Author</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://pay.hotmart.com/F104736182C?off=7w7870mw" class="btn-nav" target="_blank">Get the Guide — $9</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">🛢️ Strategic Guide · Oil & Gas</div>
+        <h1>The <span>Oil & Gas</span> Engineer in the AI Era</h1>
+        <p class="hero-subtitle">
+          A strategic guide for engineers, technicians and specialists who want to stop being task executors and become automation architects — without needing to know how to code.
+        </p>
+        <div class="hero-cta-group">
+          <a href="https://pay.hotmart.com/F104736182C?off=7w7870mw" class="btn-primary" target="_blank">
+            Get the Guide Now →
+          </a>
+          <div class="hero-price-tag">
+            Only <strong>$9</strong>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number">25+</div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">5</div>
+            <div class="stat-label">AI Categories</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">30</div>
+            <div class="stat-label">Days to Transform</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <img src="capa_ebook_v2.png" alt="The Oil & Gas Engineer in the AI Era — Ebook Cover" class="hero-book" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROBLEM -->
+<section class="problem-section">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title">You were trained to execute.<br>The market now demands that you <span>orchestrate</span>.</h2>
+    <p class="section-subtitle">If any of these situations sound familiar, this guide was written for you.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">⏰</div>
+        <h3>Hours lost on manual tasks</h3>
+        <p>Compiling data, formatting reports and filling in spreadsheets consume the time that should be dedicated to strategic analysis.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">📊</div>
+        <h3>Drowning in data, starving for insights</h3>
+        <p>Terabytes of information from sensors, inspections and reports, but limited capacity to turn it all into actionable decisions.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🔄</div>
+        <h3>Reactive when you should be predictive</h3>
+        <p>Acting after the incident occurs or the equipment fails, instead of anticipating and preventing based on data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SOLUTION -->
+<section class="solution-section" id="content">
+  <div class="container">
+    <div class="solution-grid">
+      <div>
+        <div class="section-label">The Solution</div>
+        <h2 class="section-title">From Executor to <span>Automation Architect</span></h2>
+        <p style="color: var(--gray-text); font-size: 15px; line-height: 1.7; margin-bottom: 8px;">
+          This guide won't turn you into a programmer. It will show you how to use AI as a lever to focus on what really matters: strategy, critical analysis and decision-making.
+        </p>
+        <ul class="solution-list">
+          <li>
+            <div class="check-icon">✓</div>
+            <span>Understand the <strong>3 major changes</strong> that AI is causing in Oil & Gas</span>
+          </li>
+          <li>
+            <div class="check-icon">✓</div>
+            <span>Discover the <strong>5 AI categories</strong> that form a complete automation system</span>
+          </li>
+          <li>
+            <div class="check-icon">✓</div>
+            <span>Execute the <strong>30-Day Plan</strong> to build your first automation asset</span>
+          </li>
+          <li>
+            <div class="check-icon">✓</div>
+            <span>Clearly see the <strong>2030 professional profile</strong> and how to position yourself now</span>
+          </li>
+          <li>
+            <div class="check-icon">✓</div>
+            <span>Apply this knowledge <strong>without programming</strong> or technical background in AI</span>
+          </li>
+        </ul>
+      </div>
+      <div class="solution-visual">
+        <div class="solution-visual-title">Your Transformation</div>
+        <div class="transformation-row">
+          <div class="transform-from">Reactive Maintenance</div>
+          <div class="transform-arrow">→</div>
+          <div class="transform-to">Predictive Maintenance</div>
+        </div>
+        <div class="transformation-row">
+          <div class="transform-from">Manual Reports</div>
+          <div class="transform-arrow">→</div>
+          <div class="transform-to">Automated Dashboards</div>
+        </div>
+        <div class="transformation-row">
+          <div class="transform-from">Data Overload</div>
+          <div class="transform-arrow">→</div>
+          <div class="transform-to">Instant Insights</div>
+        </div>
+        <div class="transformation-row">
+          <div class="transform-from">Task Executor</div>
+          <div class="transform-arrow">→</div>
+          <div class="transform-to">AI Orchestrator</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<section class="chapters-section">
+  <div class="container">
+    <div class="section-label">What's Inside</div>
+    <h2 class="section-title">A complete roadmap for the<br>AI-augmented engineer</h2>
+    <p class="section-subtitle">16 pages of strategic content, direct and practical — no fluff, no theory for theory's sake.</p>
+    <div class="chapters-grid">
+      <div class="chapter-card">
+        <div class="chapter-num">Introduction</div>
+        <h3>The Rising Tide</h3>
+        <p>Why the AI wave is different from all previous transformations in the industry — and who will sink.</p>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">Chapter 1</div>
+        <h3>The End of the "Spreadsheet" Engineer</h3>
+        <p>The real cost of non-automation: errors, burnout and missed career opportunities.</p>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">Chapter 2</div>
+        <h3>The 3 Big Changes of AI in O&G</h3>
+        <p>From reactive to predictive, from data to decisions, from slow communication to instant intelligence.</p>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">Chapter 3</div>
+        <h3>The 5 AI Categories You Need to Master</h3>
+        <p>The complete map of tools that, together, form a full system of productivity and automation.</p>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">Chapter 4</div>
+        <h3>The 30-Day Plan</h3>
+        <p>A simple and proven framework to build your first automation asset and prove its value to your team.</p>
+      </div>
+      <div class="chapter-card">
+        <div class="chapter-num">Chapter 5</div>
+        <h3>The Future is Inevitable</h3>
+        <p>The two engineers of 2030: who will be leading the most important projects — and who won't.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section class="author-section" id="author">
+  <div class="container">
+    <div class="author-grid">
+      <div class="author-avatar">AR</div>
+      <div>
+        <div class="author-name">André dos Reis, MSc.</div>
+        <div class="author-title">Engineer · HSEQ Specialist · Applied AI Researcher</div>
+        <p class="author-bio">
+          With over 25 years of experience in the Oil & Gas industry, André has worked across operational, safety and management roles in some of the sector's most demanding environments. Faced with the challenge of transforming complex data into fast decisions, he began applying AI tools to his own routine — and the results were transformative. This guide is the synthesis of that practical journey: a map for professionals who want to evolve without leaving the field.
+        </p>
+        <div class="author-credentials">
+          <span class="credential-tag">25+ years in O&G</span>
+          <span class="credential-tag">HSEQ Specialist</span>
+          <span class="credential-tag">MSc. in Engineering</span>
+          <span class="credential-tag">Applied AI</span>
+          <span class="credential-tag">PLURAEX Founder</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <div class="container">
+    <p class="quote-text">
+      "The future is not about <span>AI replacing engineers</span>. It's about engineers who use AI <span>replacing those who don't</span>."
+    </p>
+    <p class="quote-author">— André dos Reis, MSc.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Ready to become an <span>AI-Augmented Engineer</span>?</h2>
+      <p>Get the complete strategic guide and start your transformation today. Less than the price of a coffee — and it can change the trajectory of your career.</p>
+      <div class="cta-price-block">
+        <div class="cta-price-label">Launch Price</div>
+        <div class="cta-price"><sup>$</sup>9</div>
+        <div class="cta-price-sub">One-time payment · Instant digital access</div>
+      </div>
+      <a href="https://pay.hotmart.com/F104736182C?off=7w7870mw" class="btn-cta" target="_blank">
+        Get the Guide Now →
+      </a>
+      <p class="cta-guarantee">🔒 Secure payment · Immediate access · 7-day money-back guarantee</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title" style="margin-bottom: 40px;">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">
+          Do I need to know programming or AI to benefit from this guide?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          No. This guide was written specifically for technical professionals who have no background in programming or data science. The focus is on strategy and application, not on code.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Is this content specific to Oil & Gas or can it be applied to other industries?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The examples and context are 100% focused on Oil & Gas — maintenance, safety, operations, HSEQ. This is not a generic AI guide; it speaks directly to the reality of the sector.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          How long does it take to read?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The guide has 16 pages of dense, practical content. You can read it in about 45 minutes. But the 30-day plan can be applied immediately after reading.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          What format is the guide delivered in?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Immediately after purchase, you receive a PDF file that can be read on any device: computer, tablet or smartphone.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Is there a money-back guarantee?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes. If you are not satisfied with the content, you have 7 days after purchase to request a full refund, no questions asked.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">PLURA<span>EX</span></div>
+    <p class="footer-text">Empowering Oil & Gas professionals for the AI era.</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="mailto:contato@pluraex.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
